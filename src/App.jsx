@@ -19,10 +19,10 @@ const settingsManager = new SettingsManager(
     fileName: "settings",
   }
 );
-// const expositionTime = 20 * 60 * 1000;
-const expositionTime = 10 * 1000;
-// const breakTime = 20 * 1000;
-const breakTime = 10 * 1000;
+const expositionTime = 20 * 60 * 1000;
+// const expositionTime = 10 * 1000;
+const breakTime = 20 * 1000;
+// const breakTime = 10 * 1000;
 const timers = {};
 
 const startTimer = (key, interval, cb = () => {}) => {
