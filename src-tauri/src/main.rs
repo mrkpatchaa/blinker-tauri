@@ -96,7 +96,7 @@ fn main() {
                 // note that `tray_handle` can be called anywhere,
                 // just get an `AppHandle` instance with `app.handle()` on the setup hook
                 // and move it to another function or thread
-                let item_handle = app.tray_handle().get_item(&id);
+                // let item_handle = app.tray_handle().get_item(&id);
                 app.emit_all(
                     "menu-item-click",
                     Payload {
@@ -131,8 +131,8 @@ fn main() {
         })
         .setup(|app| {
             // don't show on the taskbar/springboard
-            // #[cfg(target_os = "macos")]
-            // app.set_activation_policy(tauri::ActivationPolicy::Accessory);
+            #[cfg(target_os = "macos")]
+            app.set_activation_policy(tauri::ActivationPolicy::Accessory);
 
             let window = app.get_window("main").unwrap();
             window.hide().unwrap();
