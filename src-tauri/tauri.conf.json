@@ -16,6 +16,22 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "fs": {
+        "createDir": true,
+        "readDir": true,
+        "readFile": true,
+        "writeFile": true,
+        "scope": [
+          "$APPCONFIG",
+          "$APPCONFIG/*"
+        ]
+      },
+      "path": {
+        "all": true
+      },
+      "notification": {
+        "all": true
       }
     },
     "bundle": {
@@ -33,7 +49,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.mrkpatchaa.blikertauri",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -60,11 +76,17 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
-        "resizable": true,
+        "height": 300,
+        "resizable": false,
         "title": "blinker-tauri",
-        "width": 800
+        "width": 400,
+        "hiddenTitle": false,
+        "decorations": true
       }
-    ]
+    ],
+    "systemTray": {
+      "iconPath": "icons/tray.png",
+      "iconAsTemplate": true
+    }
   }
 }
